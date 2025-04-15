@@ -1,9 +1,6 @@
-import { useState } from "react";
-
-export default function PeopleInput() {
-  const [people, setPeople] = useState(1);
-
+export default function PeopleInput({ people, setPeople }) {
   const handlePeopleInput = (data) => {
+    if (data < 1) return;
     setPeople(data);
   };
 

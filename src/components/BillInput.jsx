@@ -1,9 +1,6 @@
-import { useState } from "react";
-
-export default function BillInput() {
-  const [bill, setBill] = useState(0);
-
+export default function BillInput({ bill, setBill }) {
   const handleBillInput = (data) => {
+    if (data < 0) return;
     setBill(data);
   };
 
@@ -12,7 +9,7 @@ export default function BillInput() {
       <label htmlFor="bill">Bill</label>
       <br />
       <input
-        type="text"
+        type="number"
         id="bill"
         value={bill}
         onChange={(event) => handleBillInput(event.target.value)}

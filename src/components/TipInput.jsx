@@ -1,9 +1,6 @@
-import { useState } from "react";
-
-export default function TipInput() {
-  const [tip, setTip] = useState(15);
-
+export default function TipInput({ tip, setTip }) {
   const handleTipInput = (data) => {
+    if (data < 0) return;
     setTip(data);
   };
 
